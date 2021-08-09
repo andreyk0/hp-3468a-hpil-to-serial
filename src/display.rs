@@ -35,7 +35,7 @@ where
 
         self.display.clear();
 
-        Text::with_baseline(msg, Point::zero(), text_style, Baseline::Top)
+        Text::with_baseline(msg, Point::new(0, 6), text_style, Baseline::Top)
             .draw(&mut self.display)?;
 
         self.display.flush()

@@ -178,6 +178,8 @@ const APP: () = {
         let mut ss: String<32> = String::new();
         let mut frame = Frame::new();
 
+        cx.resources.display.update("Connecting").unwrap();
+
         asm::delay(SYS_FREQ.0);
         let mut exti = cx.resources.exti;
         cx.resources.hpil1.lock(|x| x.enable_interrupt(&mut exti));
