@@ -19,3 +19,18 @@ This is **not** how it all is supposed to work but good enough to just read some
 
 Example [signal capture is here](https://github.com/andreyk0/libsigrokdecode-custom/blob/main/example/hpil.sr),
 can be [decoded with](https://github.com/andreyk0/libsigrokdecode-custom/tree/main/decoders/hpil).
+
+# Example output
+
+```bash
+picocom --baud 115200 --echo --logfile test.out /dev/ttyACM0
+```
+
+```
+Type [C-a] [C-h] to see available commands
+Terminal ready
++0.33021E+1
++0.33021E+1
++0.33021E+1
++0.33020E+1
+```
