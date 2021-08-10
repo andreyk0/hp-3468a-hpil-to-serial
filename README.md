@@ -1,17 +1,21 @@
-# Rust RTIC STM32 project template
+# HP 3468a HP-IL to serial decoder
 
-Basic config defaults to stm32f1.
+This is a simplified HP IL decoder (read only). HP3468A is put into "talk" mode
+where it simply prints values constantly and doesn't require any input.
 
-# Links
+* [HP-IL introduction](http://diyhpl.us/~nmz787/hp_journal/www.hpl.hp.com/hpjournal/pdfs/IssuePDFs/1983-01.pdf)
+* [a complete implementation](http://www.jeffcalc.hp41.eu/hpil/)
 
-* [Awesome embedded Rust](https://github.com/rust-embedded/awesome-embedded-rust)
-* [Cortex-m RTIC examples](https://github.com/rtic-rs/cortex-m-rtic/tree/master/examples)
-* [RTIC RS Book](https://rtic.rs/0.5/book/en/)
-* [RTIC RS](https://github.com/rtic-rs)
+# Circuit
 
+* To complete the HP IL loop device is [short-circuited back to itself](img/device-back.jpg).
+* Analog [part](img/analog-schematic.png)
+* MCU [connection](img/mcu-connection.png)
+* E.g. [protoboard](img/protoboard.jpg)
 
-# New repo
+This is **not** how it all is supposed to work but good enough to just read some data.
 
-```bash
-rsync -av --exclude '.git' --ignore-existing ./ ../new-repo/
-```
+# Protocol
+
+Example [signal capture is here](https://github.com/andreyk0/libsigrokdecode-custom/blob/main/example/hpil.sr),
+can be [decoded with](https://github.com/andreyk0/libsigrokdecode-custom/tree/main/decoders/hpil).
